@@ -144,7 +144,7 @@ def update_players():
 def load_table():
     sht = intialize_spreadsheet()
     
-    worksheet = sht.get_worksheet(0)
+    worksheet = sht.get_worksheet(2)
     array = worksheet.get_all_records()
     table = pd.DataFrame(array)
     table = table[['Player', 'Games Played', 'Wins', 'Draws', 'Losses', 'Points', 'Goals For', 'Goals Against', 'Goal Difference']]
@@ -175,7 +175,7 @@ def table_pickle_writer():
     df, players = dataframe_editor()
     sht = intialize_spreadsheet()
     
-    worksheet = sht.get_worksheet(0)
+    worksheet = sht.get_worksheet(2)
     cell_list = worksheet.range('A2:I6')
     
     for cell in cell_list:
